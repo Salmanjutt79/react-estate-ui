@@ -21,9 +21,13 @@ steps:
     npm run build
   displayName: 'Install dependencies and build'
 
+- script: |
+    ls $(System.DefaultWorkingDirectory)/build
+  displayName: 'Verify build directory'
+
 - task: PublishBuildArtifacts@1
   inputs:
-    pathtoPublish: '$(System.DefaultWorkingDirectory)/build' # Update with your build output directory
+    pathtoPublish: '$(System.DefaultWorkingDirectory)/build'
     artifactName: 'react-app'
     publishLocation: 'Container'
   displayName: 'Publish build artifacts'
