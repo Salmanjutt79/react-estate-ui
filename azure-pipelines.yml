@@ -1,5 +1,5 @@
 trigger:
-- master
+- starter
 
 pool:
   name: 'Default'
